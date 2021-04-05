@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = '-r7kzryf9v&tu-b)e#+p6uu4qj^u=k@#vu--_n$@=l#*qvwa&h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1']
 
@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'accounts.apps.AccountsConfig',
+
+    'storages',
+
     'django_filters',
 ]
 
@@ -131,6 +134,14 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+
+# AWS configuration
+AWS_QUERYSTRING_AUTH = False
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+AWS_ACCESS_KEY_ID = 'AKIA2BLYWF2XZ4BS5YMQ'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'babuuh-crm-bucket'
 
 # smtp configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
