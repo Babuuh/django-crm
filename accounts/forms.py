@@ -17,6 +17,9 @@ class OrderForm(ModelForm):
         model = Order
         fields = '__all__'
 
+        def __str__(self):
+            return str(self.name)
+
 
 class CreateUserForm(UserCreationForm):
     class Meta:

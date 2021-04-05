@@ -131,10 +131,8 @@ def createOrder(request, pk):
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['admin'])
 def updateOrder(request, pk):
-
     order = Order.objects.get(id=pk)
     formset = OrderForm(instance=order)
-
     if request.method == 'POST':
         formset = OrderForm(request.POST, instance=order)
         if formset.is_valid():

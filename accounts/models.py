@@ -15,7 +15,7 @@ class Customer(models.Model):
         default="avatar.jpg", null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
     @property
     def image_url(self):
@@ -27,7 +27,7 @@ class Tag(models.Model):
     name = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
 
 class Product(models.Model):
@@ -43,7 +43,7 @@ class Product(models.Model):
     tags = models.ManyToManyField(Tag)
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
 
 class Order(models.Model):
@@ -60,4 +60,4 @@ class Order(models.Model):
     note = models.CharField(max_length=200, null=True)
 
     def __str__(self):
-        return self.product.name
+        return str(self.product.name)
