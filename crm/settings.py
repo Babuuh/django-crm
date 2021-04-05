@@ -139,7 +139,7 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 AWS_ACCESS_KEY_ID = 'AKIA2BLYWF2XZ4BS5YMQ'
 AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'babuuh-crm-bucket'
+AWS_STORAGE_BUCKET_NAME = 'babuuh-crm'
 
 # smtp configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
